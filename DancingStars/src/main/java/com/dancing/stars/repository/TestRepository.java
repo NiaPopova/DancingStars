@@ -1,6 +1,6 @@
-package dancing_stars.repository;
+package com.dancing.stars.repository;
 
-import dancing_stars.entitty.Test;
+import com.dancing.stars.entitty.Test;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

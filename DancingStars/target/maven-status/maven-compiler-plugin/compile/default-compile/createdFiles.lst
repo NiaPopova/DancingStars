@@ -1,1 +1,8 @@
-org\example\Main.class
+dancing_stars\service\TestService.class
+dancing_stars\entitty\Test.class
+dancing_stars\repository\TestRepository.class
+dancing_stars\mapper\TestMapperImpl.class
+dancing_stars\mapper\dto\TestDto.class
+dancing_stars\mapper\TestMapper.class
+dancing_stars\controller\TestController.class
+dancing_stars\Application.class

@@ -1,7 +1,7 @@
-package dancing_stars.service;
+package com.dancing.stars.service;
 
-import dancing_stars.entitty.Test;
-import dancing_stars.repository.TestRepository;
+import com.dancing.stars.entitty.Test;
+import com.dancing.stars.repository.TestRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

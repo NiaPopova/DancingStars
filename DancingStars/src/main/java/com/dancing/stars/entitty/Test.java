@@ -1,13 +1,15 @@
-package dancing_stars.entitty;
+package com.dancing.stars.entitty;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Getter;
+import lombok.Setter;
 
 //This is a test class to check the connection
 // from the db from e specific schema
 @Entity
+@Setter
 @Getter
 public class Test {
 
