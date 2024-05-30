@@ -15,7 +15,7 @@ public class Performance {
     @Column(name = "ID", nullable = false, unique = true)
     private Integer id;
 
-    @Column(name = "SCORE-AUD")
+    @Column(name = "SCORE_AUD")
     private Integer scoreAudience;
 
     @ManyToOne
