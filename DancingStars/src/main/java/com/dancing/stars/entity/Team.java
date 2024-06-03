@@ -25,6 +25,6 @@ public class Team {
     private String professionalName;
 
     @Column(name = "FINAL_POS")
-    private Integer position;
+    private Integer finalPosition;
 
 }

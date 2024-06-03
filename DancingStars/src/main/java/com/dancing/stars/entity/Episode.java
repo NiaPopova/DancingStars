@@ -19,15 +19,15 @@ public class Episode {
 
     @ManyToOne
     @JoinColumn(name = "WT_SMS")
-    private Team winningTeam;
+    private Team winnerTeam;
 
     @ManyToOne
     @JoinColumn(name = "SWT_SMS")
-    private Team secondWinningTeam;
+    private Team secondWinnerTeam;
 
     @ManyToOne
     @JoinColumn(name = "THWT_SMS")
-    private Team thirdWinningTeam;
+    private Team thirdWinnerTeam;
 
     @ManyToOne
     @JoinColumn(name = "LT_SMS")
