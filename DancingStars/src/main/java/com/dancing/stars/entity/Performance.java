@@ -3,7 +3,6 @@ package com.dancing.stars.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 
-import java.time.LocalDate;
 
 @Entity
 @Getter
@@ -28,7 +27,6 @@ public class Performance {
 
     @ManyToOne
     @JoinColumn(name = "EP_DATE")
-//    @Temporal(TemporalType.DATE)
     private Episode episode;
 
     @Column(name = "NOTES", length = 500)
