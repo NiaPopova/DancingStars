@@ -1,5 +1,6 @@
 package com.dancing.stars.controller;
 
+import com.dancing.stars.controller.mapper.PerformanceMapper;
 import com.dancing.stars.entity.Performance;
 import com.dancing.stars.service.PerformanceService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,8 @@ public class PerformanceController {
 
     @Autowired
     private PerformanceService service;
+    @Autowired
+    private PerformanceMapper mapper;
 
     @GetMapping
     public ResponseEntity<List<Performance>> getAllPerformances() {

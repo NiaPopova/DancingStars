@@ -1,5 +1,6 @@
 package com.dancing.stars.controller;
 
+import com.dancing.stars.controller.mapper.TeamMapper;
 import com.dancing.stars.entity.Team;
 import com.dancing.stars.service.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,8 @@ public class TeamController {
 
     @Autowired
     private TeamService service;
+    @Autowired
+    private TeamMapper mapper;
 
     @GetMapping
     public ResponseEntity<List<Team>> getAllTeams() {

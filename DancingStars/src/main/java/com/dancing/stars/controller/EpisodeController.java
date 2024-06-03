@@ -1,5 +1,6 @@
 package com.dancing.stars.controller;
 
+import com.dancing.stars.controller.mapper.EpisodeMapper;
 import com.dancing.stars.entity.Episode;
 import com.dancing.stars.service.EpisodeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,8 @@ import java.util.List;
 public class EpisodeController {
     @Autowired
     private EpisodeService service;
+    @Autowired
+    private EpisodeMapper mapper;
 
     @GetMapping
     public ResponseEntity<List<Episode>> getAllEpisodes() {
