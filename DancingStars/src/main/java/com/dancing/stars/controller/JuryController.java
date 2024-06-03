@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/jury")
@@ -20,8 +21,12 @@ public class JuryController {
     private JuryMapper mapper;
 
     @GetMapping
-    public ResponseEntity<List<Jury>> getAllJury() {
-        return ResponseEntity.ok(service.getAllJury());
+    public ResponseEntity<List<JuryDTO>> getAllJury() {
+        List<Jury> result = service.getAllJury();
+
+        return ResponseEntity.ok(result.stream()
+                .map(mapper::entityToDTO)
+                .collect(Collectors.toList()));
 
     }
 
