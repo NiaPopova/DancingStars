@@ -1,7 +1,5 @@
 package com.dancing.stars.entity.dto;
 
-import com.dancing.stars.entity.Dance;
-import com.dancing.stars.entity.Episode;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -10,7 +8,7 @@ import java.time.LocalDate;
 public class PerformanceDTO {
     private String teamSMS;
     private Integer scoreAudience;
-    private Dance dance;
-    private Episode episode;
+    private DanceDTO dance;
+    private EpisodeDTO episode;
     private String notes;
 }
