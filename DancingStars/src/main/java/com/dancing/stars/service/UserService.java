@@ -2,10 +2,10 @@ package com.dancing.stars.service;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
 import com.dancing.stars.entity.User;
+import com.dancing.stars.exception.BadRequestException;
 import com.dancing.stars.exception.NotFoundException;
 import com.dancing.stars.exception.UnauthorizedException;
 import com.dancing.stars.repository.UserRepository;
-import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
