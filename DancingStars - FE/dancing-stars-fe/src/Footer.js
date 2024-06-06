@@ -10,7 +10,6 @@ const Footer = () => {
                 <Link className="footer-cell" to="/dances">Dances</Link>
                 <Link className="footer-cell" to="/jury">Jury</Link>
                 <Link className="footer-cell" to="/episodes">Episodes</Link>
-                <Link className="footer-cell" to="/score">Score</Link>
             </div>
         </footer>
     );

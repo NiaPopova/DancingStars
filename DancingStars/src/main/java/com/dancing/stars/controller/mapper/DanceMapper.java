@@ -9,5 +9,7 @@ import org.mapstruct.Mapping;
 public interface DanceMapper {
     @Mapping(source = "name", target = "name")
     @Mapping(source = "description", target = "description")
+    @Mapping(source = "photo", target = "photo")
     DanceDTO entityToDTO(Dance entity);
+
 }

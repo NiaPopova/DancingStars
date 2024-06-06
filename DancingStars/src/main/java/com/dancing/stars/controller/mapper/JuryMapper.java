@@ -10,6 +10,7 @@ public interface JuryMapper {
 
     @Mapping(source = "name", target = "name")
     @Mapping(source = "profession", target = "profession")
+    @Mapping(source = "photo", target = "photo")
     JuryDTO entityToDTO(Jury entity);
 
 }

@@ -9,4 +9,5 @@ public class TeamDTO {
     private String participantProfession;
     private String professionalName;
     private Integer finalPosition;
+    private String photo;
 }

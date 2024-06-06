@@ -7,12 +7,13 @@ import com.dancing.stars.entity.Team;
 import com.dancing.stars.entity.dto.DanceDTO;
 import com.dancing.stars.entity.dto.EpisodeDTO;
 import com.dancing.stars.entity.dto.PerformanceDTO;
+import com.dancing.stars.entity.dto.TeamDTO;
 import javax.annotation.processing.Generated;
 import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-06-04T16:48:58+0300",
+    date = "2024-06-06T19:58:51+0300",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.2 (Oracle Corporation)"
 )
 @Component
@@ -63,6 +64,22 @@ public class PerformanceMapperImpl implements PerformanceMapper {
         return danceDTO;
     }
 
+    protected TeamDTO teamToTeamDTO(Team team) {
+        if ( team == null ) {
+            return null;
+        }
+
+        TeamDTO teamDTO = new TeamDTO();
+
+        teamDTO.setSms( team.getSms() );
+        teamDTO.setParticipantName( team.getParticipantName() );
+        teamDTO.setParticipantProfession( team.getParticipantProfession() );
+        teamDTO.setProfessionalName( team.getProfessionalName() );
+        teamDTO.setFinalPosition( team.getFinalPosition() );
+
+        return teamDTO;
+    }
+
     protected EpisodeDTO episodeToEpisodeDTO(Episode episode) {
         if ( episode == null ) {
             return null;
@@ -72,6 +89,11 @@ public class PerformanceMapperImpl implements PerformanceMapper {
 
         episodeDTO.setDate( episode.getDate() );
         episodeDTO.setTheme( episode.getTheme() );
+        episodeDTO.setWinnerTeam( teamToTeamDTO( episode.getWinnerTeam() ) );
+        episodeDTO.setSecondWinnerTeam( teamToTeamDTO( episode.getSecondWinnerTeam() ) );
+        episodeDTO.setThirdWinnerTeam( teamToTeamDTO( episode.getThirdWinnerTeam() ) );
+        episodeDTO.setLosingTeam( teamToTeamDTO( episode.getLosingTeam() ) );
+        episodeDTO.setSecondLosingTeam( teamToTeamDTO( episode.getSecondLosingTeam() ) );
 
         return episodeDTO;
     }

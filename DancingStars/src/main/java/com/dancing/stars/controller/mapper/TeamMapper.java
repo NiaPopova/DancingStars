@@ -12,5 +12,6 @@ public interface TeamMapper {
     @Mapping(source = "participantProfession", target = "participantProfession")
     @Mapping(source = "professionalName", target = "professionalName")
     @Mapping(source = "finalPosition", target = "finalPosition")
+    @Mapping(source = "photo", target = "photo")
     TeamDTO entityToDTO(Team entity);
 }

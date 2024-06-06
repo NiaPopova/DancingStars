@@ -27,4 +27,6 @@ public class Team {
     @Column(name = "FINAL_POS")
     private Integer finalPosition;
 
+    @Column(name = "PHOTO", length = 500)
+    private String photo;
 }

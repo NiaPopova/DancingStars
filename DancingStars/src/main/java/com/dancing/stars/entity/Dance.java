@@ -18,4 +18,6 @@ public class Dance {
     @Column(name = "DESCR", length = 500)
     private String description;
 
+    @Column(name = "PHOTO", length = 500)
+    private String photo;
 }

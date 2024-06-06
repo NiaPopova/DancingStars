@@ -19,4 +19,6 @@ public class Jury {
     @Column(name = "PROF", length = 100)
     private String profession;
 
+    @Column(name = "PHOTO", length = 500)
+    private String photo;
 }

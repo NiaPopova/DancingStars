@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-06-04T16:48:58+0300",
+    date = "2024-06-06T20:03:02+0300",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.2 (Oracle Corporation)"
 )
 @Component
@@ -23,6 +23,7 @@ public class JuryMapperImpl implements JuryMapper {
 
         juryDTO.setName( entity.getName() );
         juryDTO.setProfession( entity.getProfession() );
+        juryDTO.setPhoto( entity.getPhoto() );
 
         return juryDTO;
     }
