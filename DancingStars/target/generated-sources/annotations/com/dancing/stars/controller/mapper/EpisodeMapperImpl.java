@@ -3,12 +3,13 @@ package com.dancing.stars.controller.mapper;
 import com.dancing.stars.entity.Episode;
 import com.dancing.stars.entity.Team;
 import com.dancing.stars.entity.dto.EpisodeDTO;
+import com.dancing.stars.entity.dto.TeamDTO;
 import javax.annotation.processing.Generated;
 import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-06-04T16:48:58+0300",
+    date = "2024-06-06T12:44:52+0300",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.2 (Oracle Corporation)"
 )
 @Component
@@ -24,87 +25,28 @@ public class EpisodeMapperImpl implements EpisodeMapper {
 
         episodeDTO.setDate( entity.getDate() );
         episodeDTO.setTheme( entity.getTheme() );
-        episodeDTO.setWinnerTeamSMS( entityWinnerTeamSms( entity ) );
-        episodeDTO.setSecondWinnerTeamSMS( entitySecondWinnerTeamSms( entity ) );
-        episodeDTO.setThirdWinnerTeamSMS( entityThirdWinnerTeamSms( entity ) );
-        episodeDTO.setLosingTeamSMS( entityLosingTeamSms( entity ) );
-        episodeDTO.setSecondLosingTeamSMS( entitySecondLosingTeamSms( entity ) );
+        episodeDTO.setWinnerTeam( teamToTeamDTO( entity.getWinnerTeam() ) );
+        episodeDTO.setSecondWinnerTeam( teamToTeamDTO( entity.getSecondWinnerTeam() ) );
+        episodeDTO.setThirdWinnerTeam( teamToTeamDTO( entity.getThirdWinnerTeam() ) );
+        episodeDTO.setLosingTeam( teamToTeamDTO( entity.getLosingTeam() ) );
+        episodeDTO.setSecondLosingTeam( teamToTeamDTO( entity.getSecondLosingTeam() ) );
 
         return episodeDTO;
     }
 
-    private String entityWinnerTeamSms(Episode episode) {
-        if ( episode == null ) {
+    protected TeamDTO teamToTeamDTO(Team team) {
+        if ( team == null ) {
             return null;
         }
-        Team winnerTeam = episode.getWinnerTeam();
-        if ( winnerTeam == null ) {
-            return null;
-        }
-        String sms = winnerTeam.getSms();
-        if ( sms == null ) {
-            return null;
-        }
-        return sms;
-    }
 
-    private String entitySecondWinnerTeamSms(Episode episode) {
-        if ( episode == null ) {
-            return null;
-        }
-        Team secondWinnerTeam = episode.getSecondWinnerTeam();
-        if ( secondWinnerTeam == null ) {
-            return null;
-        }
-        String sms = secondWinnerTeam.getSms();
-        if ( sms == null ) {
-            return null;
-        }
-        return sms;
-    }
+        TeamDTO teamDTO = new TeamDTO();
 
-    private String entityThirdWinnerTeamSms(Episode episode) {
-        if ( episode == null ) {
-            return null;
-        }
-        Team thirdWinnerTeam = episode.getThirdWinnerTeam();
-        if ( thirdWinnerTeam == null ) {
-            return null;
-        }
-        String sms = thirdWinnerTeam.getSms();
-        if ( sms == null ) {
-            return null;
-        }
-        return sms;
-    }
+        teamDTO.setSms( team.getSms() );
+        teamDTO.setParticipantName( team.getParticipantName() );
+        teamDTO.setParticipantProfession( team.getParticipantProfession() );
+        teamDTO.setProfessionalName( team.getProfessionalName() );
+        teamDTO.setFinalPosition( team.getFinalPosition() );
 
-    private String entityLosingTeamSms(Episode episode) {
-        if ( episode == null ) {
-            return null;
-        }
-        Team losingTeam = episode.getLosingTeam();
-        if ( losingTeam == null ) {
-            return null;
-        }
-        String sms = losingTeam.getSms();
-        if ( sms == null ) {
-            return null;
-        }
-        return sms;
-    }
-
-    private String entitySecondLosingTeamSms(Episode episode) {
-        if ( episode == null ) {
-            return null;
-        }
-        Team secondLosingTeam = episode.getSecondLosingTeam();
-        if ( secondLosingTeam == null ) {
-            return null;
-        }
-        String sms = secondLosingTeam.getSms();
-        if ( sms == null ) {
-            return null;
-        }
-        return sms;
+        return teamDTO;
     }
 }

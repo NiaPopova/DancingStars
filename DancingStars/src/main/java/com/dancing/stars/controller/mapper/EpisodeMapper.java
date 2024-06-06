@@ -10,10 +10,10 @@ import org.mapstruct.Mapping;
 public interface EpisodeMapper {
     @Mapping(source = "date", target = "date")
     @Mapping(source = "theme", target = "theme")
-    @Mapping(source = "winnerTeam.sms", target = "winnerTeamSMS")
-    @Mapping(source = "secondWinnerTeam.sms", target = "secondWinnerTeamSMS")
-    @Mapping(source = "thirdWinnerTeam.sms", target = "thirdWinnerTeamSMS")
-    @Mapping(source = "losingTeam.sms", target = "losingTeamSMS")
-    @Mapping(source = "secondLosingTeam.sms", target = "secondLosingTeamSMS")
+    @Mapping(source = "winnerTeam", target = "winnerTeam")
+    @Mapping(source = "secondWinnerTeam", target = "secondWinnerTeam")
+    @Mapping(source = "thirdWinnerTeam", target = "thirdWinnerTeam")
+    @Mapping(source = "losingTeam", target = "losingTeam")
+    @Mapping(source = "secondLosingTeam", target = "secondLosingTeam")
     EpisodeDTO entityToDTO(Episode entity);
 }

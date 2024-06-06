@@ -7,9 +7,9 @@ import java.time.LocalDate;
 public class EpisodeDTO {
     private LocalDate date;
     private String theme;
-    private String winnerTeamSMS;
-    private String secondWinnerTeamSMS;
-    private String thirdWinnerTeamSMS;
-    private String losingTeamSMS;
-    private String secondLosingTeamSMS;
+    private TeamDTO winnerTeam;
+    private TeamDTO secondWinnerTeam;
+    private TeamDTO thirdWinnerTeam;
+    private TeamDTO losingTeam;
+    private TeamDTO secondLosingTeam;
 }
