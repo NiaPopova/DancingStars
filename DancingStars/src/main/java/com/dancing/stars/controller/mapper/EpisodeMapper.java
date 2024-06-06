@@ -2,7 +2,6 @@ package com.dancing.stars.controller.mapper;
 
 import com.dancing.stars.entity.Episode;
 import com.dancing.stars.entity.dto.EpisodeDTO;
-import com.dancing.stars.entity.dto.JuryDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
