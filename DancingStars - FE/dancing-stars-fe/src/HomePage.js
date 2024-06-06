@@ -11,13 +11,6 @@ const HomePage = () => {
 
   return (
     <div className="container home-container">
-      <header className="home-header">
-        <div className="user-info">
-          <i className="bi bi-person-circle user-icon"></i>
-          <span className="user-email">{user.email}</span>
-        </div>
-      </header>
-      
       <main className="home-main">
         <div className="row">
           <div className="col-12">
@@ -30,15 +23,6 @@ const HomePage = () => {
           </div>
         </div>
       </main>
-
-      <footer className="home-footer">
-        <div className="footer-menu">
-          <div className="footer-cell">Teams</div>
-          <div className="footer-cell">Dances</div>
-          <div className="footer-cell">Jury</div>
-          <div className="footer-cell">Episodes</div>
-        </div>
-      </footer>
     </div>
   );
 };

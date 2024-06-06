@@ -28,9 +28,9 @@ const JuryPage = () => {
           {juryMembers.map(member => (
             <div className="col-md-3" key={member.name}>
               <div className={`card jury-card ${expandedJury === member.name ? 'expanded' : ''}`} onClick={() => toggleExpand(member.name)}>
-              {member.photo && (
-              <img src={require(`${member.photo}`)} className="card-img-top" alt={member.name} />
-              )}
+                {member.photo && (
+                  <img src={require(`${member.photo}`)} className="card-img-top" alt={member.name} />
+                )}
                 <div className="card-body">
                   <h5 className="card-title">{member.name}</h5>
                   {expandedJury === member.name && (
