@@ -1,0 +1,15 @@
+// Import Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// You can customize Bootstrap variables here if needed
+$primary: #007bff;
+$secondary: #6c757d;
+// Add more custom variables as needed
+
+// Import Bootstrap functions, variables, and mixins first
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+// Import the rest of Bootstrap
+@import '~bootstrap/scss/bootstrap';

@@ -1,0 +1,97 @@
+.episodes-container {
+    .home-header {
+      background-color: #f8f9fa;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #dee2e6;
+  
+      .user-info {
+        display: flex;
+        align-items: center;
+  
+        .user-icon {
+          font-size: 2rem;
+          margin-right: 10px;
+        }
+  
+        .user-email {
+          font-size: 1.25rem;
+          font-weight: bold;
+        }
+      }
+    }
+  
+    .episodes-main {
+      padding: 20px;
+  
+      .form-group {
+        margin-bottom: 20px;
+  
+        label {
+          font-size: 1.25rem;
+          font-weight: bold;
+        }
+  
+        .form-control {
+          width: 100%;
+          padding: 10px;
+          font-size: 1rem;
+        }
+      }
+  
+      .episode-details {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 5px;
+  
+        h1 {
+          margin-bottom: 10px;
+        }
+  
+        .teams-scores {
+          margin-top: 10px;
+  
+          .team-score {
+            margin-bottom: 10px;
+  
+            h4 {
+              margin: 0;
+            }
+  
+            p {
+              margin: 0;
+              font-size: 1rem;
+              color: #333;
+            }
+          }
+        }
+      }
+    }
+  
+    .home-footer {
+      background-color: #f8f9fa;
+      padding: 10px 0;
+      border-top: 1px solid #dee2e6;
+  
+      .footer-menu {
+        display: flex;
+        justify-content: space-around;
+  
+        .footer-cell {
+          flex: 1;
+          text-align: center;
+          padding: 10px 0;
+          font-size: 1.25rem;
+          font-weight: bold;
+          cursor: pointer;
+  
+          &:hover {
+            background-color: #e9ecef;
+          }
+        }
+      }
+    }
+}
