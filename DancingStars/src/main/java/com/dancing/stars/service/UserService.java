@@ -83,7 +83,7 @@ public class UserService {
         if (password.isBlank()) {
             throw new BadRequestException("Password is a mandatory field!");
         }
-        if (!password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=\\S+$).{8,20}$")) {
+        if (!password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*-])(?=\\S+$).{8,20}$")) {
             throw new BadRequestException("Password should be: at least 8 symbols long. " +
                     "Contain at least one digit. " +
                     "Contain at least one upper case character. " +
