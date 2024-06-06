@@ -1,0 +1,25 @@
+.app-footer {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    border-top: 1px solid #dee2e6;
+
+    .footer-menu {
+        display: flex;
+        justify-content: space-around;
+
+        .footer-cell {
+            flex: 1;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 1.25rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+
+            &:hover {
+                background-color: #e9ecef;
+            }
+        }
+    }
+}

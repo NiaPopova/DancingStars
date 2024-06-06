@@ -1,0 +1,22 @@
+.app-header {
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #dee2e6;
+
+    .user-info {
+        display: flex;
+        align-items: center;
+
+        .user-icon {
+            font-size: 2rem;
+            margin-right: 10px;
+        }
+
+        .user-email {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+    }
+}
