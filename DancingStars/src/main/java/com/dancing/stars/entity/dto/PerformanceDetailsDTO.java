@@ -12,6 +12,7 @@ public class PerformanceDetailsDTO {
     private String professionalName;
     private String danceName;
     private LocalDate episodeDate;
+    private String episodeTheme;
     private Integer audienceScore;
     private String notes;
     private String photo;

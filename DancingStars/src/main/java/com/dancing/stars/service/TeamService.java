@@ -19,7 +19,7 @@ public class TeamService {
         return repository.findAll();
     }
 
-    public Team getTeamByParticipantName(String name) {
+    public Team getTeamBySMS(String name) {
         if (name == null) {
             throw new NullPointerException("No input data!");
 
