@@ -24,7 +24,7 @@ public class TeamService {
             throw new NullPointerException("No input data!");
 
         } else {
-            Optional<Team> result = repository.findByParticipantNameContainingIgnoreCase(name);
+            Optional<Team> result = repository.findById(name);
 
             if (result.isEmpty()) {
                 throw new NotFoundException("No such data!");

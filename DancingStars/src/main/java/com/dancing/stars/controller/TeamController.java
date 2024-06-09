@@ -34,7 +34,7 @@ public class TeamController {
     }
 
     @GetMapping("/team")
-    public ResponseEntity<TeamDTO> getTeamByParticipantName(@RequestParam(name = "name") String name) {
-        return ResponseEntity.ok(mapper.entityToDTO(service.getTeamByParticipantName(name)));
+    public ResponseEntity<TeamDTO> getTeamByParticipantName(@RequestParam(name = "sms") String sms) {
+        return ResponseEntity.ok(mapper.entityToDTO(service.getTeamByParticipantName(sms)));
     }
 }
