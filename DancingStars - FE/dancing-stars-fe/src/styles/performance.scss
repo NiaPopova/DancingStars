@@ -1,0 +1,69 @@
+.performance-container {
+    padding: 20px;
+    background-color: #E6E9F9; // Icy Lilac
+  
+    .performance-header {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #4B0082; // Indigo
+      margin-bottom: 20px;
+    }
+  
+    .form-group {
+      margin-bottom: 20px;
+  
+      label {
+        font-size: 1rem;
+        color: #56365C; // Lilac Shadow
+      }
+  
+      .form-control {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        border-radius: 5px;
+        border: 1px solid #D3CACD; // Dusty Lilac
+      }
+    }
+  
+    .episode-details {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #DCD0FF; // Pale Lilac
+      border-radius: 5px;
+  
+      h2 {
+        font-size: 1.5rem;
+        color: #4B0082; // Indigo
+        margin-bottom: 10px;
+      }
+  
+      p {
+        font-size: 1rem;
+        color: #56365C; // Lilac Shadow
+        margin-bottom: 20px;
+      }
+  
+      .teams-dances {
+        .team-dance {
+          margin-bottom: 20px;
+          padding: 10px;
+          background-color: #C8A2C8; // Lilac
+          border-radius: 5px;
+          border: 1px solid #D3CACD; // Dusty Lilac
+  
+          h3 {
+            font-size: 1.2rem;
+            color: #4B0082; // Indigo
+            margin-bottom: 5px;
+          }
+  
+          p {
+            font-size: 1rem;
+            color: #56365C; // Lilac Shadow
+          }
+        }
+      }
+    }
+}
+  

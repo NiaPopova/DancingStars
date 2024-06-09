@@ -8,6 +8,7 @@ import JuryPage from './JuryPage';
 import TeamsPage from './TeamsPage';
 import EpisodesPage from './EpisodesPage';
 import Layout from './Layout';
+import Performance from './Performance';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="jury" element={<JuryPage />} />
           <Route path="teams" element={<TeamsPage />} />
           <Route path="episodes" element={<EpisodesPage />} />
+          <Route path="performances" element={<Performance />} />
         </Route>
       </Routes>
     </Router>

@@ -1,58 +1,39 @@
 .dances-container {
-    .queue {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 20px;
-  
-      .week {
-        cursor: pointer;
-        padding: 10px;
-        background-color: #f8f9fa;
-        border: 1px solid #dee2e6;
-        border-radius: 5px;
-  
-        &.active {
-          background-color: #007bff;
-          color: #fff;
-        }
-      }
+  background-color: #E6E9F9; // Icy Lilac
+  padding: 20px;
+
+  .dances-header {
+    font-size: 2rem;
+    color: #4B0082; // Indigo
+    margin-bottom: 20px;
+  }
+
+  .week-dropdown {
+    margin-bottom: 20px;
+
+    select {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #D3CACD; // Dusty Lilac
+      border-radius: 5px;
     }
-  
-    .dance-dropdown {
-      margin-bottom: 20px;
-  
-      h3 {
-        margin-bottom: 10px;
-      }
-  
-      .form-select {
-        width: 100%;
-        margin-bottom: 10px;
-      }
-  
-      .dance-info {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 20px;
-  
-        .dance-card {
-          background-color: #f8f9fa;
-          border: 1px solid #dee2e6;
-          border-radius: 5px;
-          padding: 10px;
-  
-          h4 {
-            margin-bottom: 5px;
-            font-size: 1.25rem;
-            font-weight: bold;
-          }
-  
-          p {
-            font-size: 1rem;
-            color: #666;
-          }
-        }
-      }
+  }
+
+  .dance-card {
+    background-color: #C8A2C8; // Lilac
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #D3CACD; // Dusty Lilac
+
+    h3 {
+      color: #4B0082; // Indigo
+      margin-bottom: 10px;
     }
+
+    p {
+      color: #56365C; // Lilac Shadow
+    }
+  }
 }
-  

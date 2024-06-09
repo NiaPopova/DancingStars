@@ -1,25 +1,26 @@
 .app-footer {
-    background-color: #f8f9fa;
+    background-color: #C8A2C8; // Lilac
     padding: 10px 0;
-    border-top: 1px solid #dee2e6;
-
+    border-top: 1px solid #D3CACD; // Dusty Lilac
+  
     .footer-menu {
-        display: flex;
-        justify-content: space-around;
-
-        .footer-cell {
-            flex: 1;
-            text-align: center;
-            padding: 10px 0;
-            font-size: 1.25rem;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-
-            &:hover {
-                background-color: #e9ecef;
-            }
+      display: flex;
+      justify-content: space-around;
+  
+      .footer-cell {
+        flex: 1;
+        text-align: center;
+        padding: 10px 0;
+        font-size: 1.25rem;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none;
+        color: inherit;
+  
+        &:hover {
+          background-color: #9874D3; // Lilac Blush
         }
+      }
     }
 }
+  
