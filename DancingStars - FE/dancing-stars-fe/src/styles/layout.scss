@@ -2,9 +2,11 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-
+  
     .app-content {
-        flex: 1;
-        padding: 20px;
+      flex: 1;
+      padding: 20px;
+      background-color: #E6E9F9; // Icy Lilac
     }
 }
+  

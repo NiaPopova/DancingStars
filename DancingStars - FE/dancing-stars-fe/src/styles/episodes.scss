@@ -1,97 +1,107 @@
 .episodes-container {
-    .home-header {
-      background-color: #f8f9fa;
-      padding: 10px 20px;
+  .home-header {
+    background-color: #C8A2C8; // Lilac
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #D3CACD; // Dusty Lilac
+
+    .user-info {
       display: flex;
       align-items: center;
-      border-bottom: 1px solid #dee2e6;
-  
-      .user-info {
-        display: flex;
-        align-items: center;
-  
-        .user-icon {
-          font-size: 2rem;
-          margin-right: 10px;
-        }
-  
-        .user-email {
-          font-size: 1.25rem;
-          font-weight: bold;
-        }
+
+      .user-icon {
+        font-size: 2rem;
+        margin-right: 10px;
+        color: #4B0082; // Indigo
+      }
+
+      .user-email {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: #56365C; // Lilac Shadow
       }
     }
-  
-    .episodes-main {
+  }
+
+  .episodes-main {
+    padding: 20px;
+
+    .form-group {
+      margin-bottom: 20px;
+
+      label {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: #9955BB; // Deep Lilac
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #D3CACD; // Dusty Lilac
+        background-color: #E6E9F9; // Icy Lilac
+        color: #4B0082; // Indigo
+      }
+    }
+
+    .episode-details {
+      margin-top: 20px;
       padding: 20px;
-  
-      .form-group {
-        margin-bottom: 20px;
-  
-        label {
-          font-size: 1.25rem;
-          font-weight: bold;
-        }
-  
-        .form-control {
-          width: 100%;
-          padding: 10px;
-          font-size: 1rem;
-        }
+      background-color: #DCD0FF; // Pale Lilac
+      border: 1px solid #D3CACD; // Dusty Lilac
+      border-radius: 5px;
+
+      h1 {
+        margin-bottom: 10px;
+        color: #4B0082; // Indigo
       }
-  
-      .episode-details {
-        margin-top: 20px;
-        padding: 20px;
-        background-color: #f8f9fa;
-        border: 1px solid #dee2e6;
-        border-radius: 5px;
-  
-        h1 {
+
+      .teams-scores {
+        margin-top: 10px;
+
+        .team-score {
           margin-bottom: 10px;
-        }
-  
-        .teams-scores {
-          margin-top: 10px;
-  
-          .team-score {
-            margin-bottom: 10px;
-  
-            h4 {
-              margin: 0;
-            }
-  
-            p {
-              margin: 0;
-              font-size: 1rem;
-              color: #333;
-            }
+
+          h4 {
+            margin: 0;
+            color: #9955BB; // Deep Lilac
+          }
+
+          p {
+            margin: 0;
+            font-size: 1rem;
+            color: #56365C; // Lilac Shadow
           }
         }
       }
     }
-  
-    .home-footer {
-      background-color: #f8f9fa;
-      padding: 10px 0;
-      border-top: 1px solid #dee2e6;
-  
-      .footer-menu {
-        display: flex;
-        justify-content: space-around;
-  
-        .footer-cell {
-          flex: 1;
-          text-align: center;
-          padding: 10px 0;
-          font-size: 1.25rem;
-          font-weight: bold;
-          cursor: pointer;
-  
-          &:hover {
-            background-color: #e9ecef;
-          }
+  }
+
+  .home-footer {
+    background-color: #C8A2C8; // Lilac
+    padding: 10px 0;
+    border-top: 1px solid #D3CACD; // Dusty Lilac
+
+    .footer-menu {
+      display: flex;
+      justify-content: space-around;
+
+      .footer-cell {
+        flex: 1;
+        text-align: center;
+        padding: 10px 0;
+        font-size: 1.25rem;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none;
+        color: inherit;
+
+        &:hover {
+          background-color: #9874D3; // Lilac Blush
         }
       }
     }
+  }
 }

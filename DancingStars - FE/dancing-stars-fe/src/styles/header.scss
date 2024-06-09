@@ -1,22 +1,25 @@
 .app-header {
-    background-color: #f8f9fa;
+    background-color: #C8A2C8; // Lilac
     padding: 10px 20px;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #dee2e6;
-
+    border-bottom: 1px solid #D3CACD; // Dusty Lilac
+  
     .user-info {
-        display: flex;
-        align-items: center;
-
-        .user-icon {
-            font-size: 2rem;
-            margin-right: 10px;
-        }
-
-        .user-email {
-            font-size: 1.25rem;
-            font-weight: bold;
-        }
+      display: flex;
+      align-items: center;
+  
+      .user-icon {
+        font-size: 2rem;
+        margin-right: 10px;
+        color: #4B0082; // Indigo
+      }
+  
+      .user-email {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: #56365C; // Lilac Shadow
+      }
     }
 }
+  
