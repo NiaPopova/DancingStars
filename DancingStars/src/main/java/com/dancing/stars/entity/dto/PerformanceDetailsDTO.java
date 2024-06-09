@@ -16,5 +16,6 @@ public class PerformanceDetailsDTO {
     private Integer audienceScore;
     private String notes;
     private String photo;
+    private Integer totalScore;
 }
 
