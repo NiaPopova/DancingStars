@@ -1,30 +1,21 @@
+// HomeRedirect.js
 import React from 'react';
-import './styles/home.scss';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from './auth';
 
-const HomePage = () => {
-  // Dummy user data for demonstration
-  const user = {
-    email: 'user@example.com',
-    favouriteTeam: 'Team A',
-    teamScore: '100'
-  };
+const HomeRedirect = () => {
+  const { isAuthenticated } = useAuth();
+  const navigate = useNavigate();
 
-  return (
-    <div className="container home-container">
-      <main className="home-main">
-        <div className="row">
-          <div className="col-12">
-            <h3>Favourite Team: {user.favouriteTeam}</h3>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-12">
-            <h3>Team Score: {user.teamScore}</h3>
-          </div>
-        </div>
-      </main>
-    </div>
-  );
+  React.useEffect(() => {
+    if (isAuthenticated) {
+      navigate('/teams');
+    } else {
+      navigate('/login');
+    }
+  }, [isAuthenticated, navigate]);
+
+  return null; // This component doesn't render anything itself
 };
 
-export default HomePage;
+export default HomeRedirect;

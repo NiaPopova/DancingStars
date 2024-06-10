@@ -21,11 +21,35 @@
       font-weight: bold;
       color: #56365C; // Lilac Shadow
     }
+
+    .btn-icon {
+      border: none;
+      background: none;
+      color: #4B0082; // Indigo
+      cursor: pointer;
+      font-size: 2rem;
+      margin-left: 10px;
+
+      &:hover {
+        color: #6B0082; // Darker Indigo
+      }
+    }
+
+    .btn-primary {
+      margin-left: 10px;
+      background-color: #4B0082; // Indigo
+      border: none;
+      font-size: 2rem;
+
+      &:hover {
+        background-color: #6B0082; // Darker Indigo
+      }
+    }
   }
 
   .app-main {
     width: 90%;
-  } 
+  }
 
   .main-nav {
     position: relative;
@@ -48,10 +72,20 @@
       display: flex;
       padding-top: 21px;
       text-decoration: none;
+      transition: color 0.3s ease;
+
+      &.active {
+        font-weight: bold;
+        color: #4B0082; // Indigo
+      }
+
+      &:hover {
+        color: #D3CACD; // Dusty Lilac
+      }
     }
 
     li {
-      list-style-type:none;
+      list-style-type: none;
     }
   }
 }

@@ -1,52 +1,73 @@
+// LoginForm.js
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from './auth';
 
-const LoginPage = () => {
+const LoginForm = () => {
+    const { login } = useAuth();
+    const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [errors, setErrors] = useState({});
+    const [serverError, setServerError] = useState('');
 
-    const handleSubmit = (e) => {
+    const validateForm = () => {
+        let formErrors = {};
+        if (!email) {
+            formErrors.email = 'Email is required';
+        }
+        if (!password) {
+            formErrors.password = 'Password is required';
+        }
+        setErrors(formErrors);
+        return Object.keys(formErrors).length === 0;
+    };
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Perform login logic here
-        console.log('Email:', email);
-        console.log('Password:', password);
+        if (validateForm()) {
+            try {
+                const response = await axios.post(`http://localhost:8080/user/login?email=${email}&password=${password}`);
+                const { email: userEmail, favoriteTeam } = response.data;
+                login(userEmail, favoriteTeam);
+                navigate('/home'); // Redirect to the home page after successful login
+            } catch (error) {
+                setServerError('Failed to login. Please check your credentials.');
+            }
+        }
     };
 
     return (
-        <div className="container">
-            <div className="row justify-content-center">
-                <div className="col-md-6">
-                    <h2 className="text-center">Login</h2>
-                    <form onSubmit={handleSubmit}>
-                        <div className="form-group">
-                            <label>Email:</label>
-                            <input
-                                type="email"
-                                className="form-control"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                required
-                            />
-                        </div>
-                        <div className="form-group">
-                            <label>Password:</label>
-                            <input
-                                type="password"
-                                className="form-control"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                required
-                            />
-                        </div>
-                        <button type="submit" className="btn btn-primary btn-block">Login</button>
-                    </form>
-                    <p className="text-center mt-3">
-                        Don't have an account? <Link to="/register">Register</Link>
-                    </p>
+        <div className="container mt-5">
+            <form onSubmit={handleSubmit}>
+                <div className="mb-3">
+                    <label htmlFor="email" className="form-label">Email</label>
+                    <input
+                        type="email"
+                        className={`form-control ${errors.email ? 'is-invalid' : ''}`}
+                        id="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                    {errors.email && <div className="error-message">{errors.email}</div>}
                 </div>
-            </div>
+                <div className="mb-3">
+                    <label htmlFor="password" className="form-label">Password</label>
+                    <input
+                        type="password"
+                        className={`form-control ${errors.password ? 'is-invalid' : ''}`}
+                        id="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                    {errors.password && <div className="error-message">{errors.password}</div>}
+                </div>
+                <button type="submit" className="btn btn-primary">Login</button>
+                {serverError && <div className="error-message mt-3">{serverError}</div>}
+            </form>
         </div>
     );
 };
 
-export default LoginPage;
+export default LoginForm;
