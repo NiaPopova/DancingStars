@@ -19,12 +19,12 @@ public class TeamService {
         return repository.findAll();
     }
 
-    public Team getTeamBySMS(String name) {
-        if (name == null) {
+    public Team getTeamBySMS(String sms) {
+        if (sms == null) {
             throw new NullPointerException("No input data!");
 
         } else {
-            Optional<Team> result = repository.findById(name);
+            Optional<Team> result = repository.findById(sms);
 
             if (result.isEmpty()) {
                 throw new NotFoundException("No such data!");

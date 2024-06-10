@@ -1,16 +1,16 @@
 package com.dancing.stars.service;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
+import com.dancing.stars.entity.Team;
 import com.dancing.stars.entity.User;
 import com.dancing.stars.exception.BadRequestException;
 import com.dancing.stars.exception.NotFoundException;
 import com.dancing.stars.exception.UnauthorizedException;
+import com.dancing.stars.repository.TeamRepository;
 import com.dancing.stars.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -18,6 +18,9 @@ public class UserService {
 
     @Autowired
     private UserRepository repository;
+
+    @Autowired
+    private TeamRepository teamRepository;
 
     public User getUserByEmail(String email) {
         if (email == null) {
@@ -70,6 +73,38 @@ public class UserService {
         return user.get();
     }
 
+
+    public User addFavoriteTeam(String email, String sms) {
+        validateEmail(email);
+        User user = getUserByEmail(email);
+        Team team;
+
+        if (sms == null) {
+            throw new NullPointerException("No input data!");
+
+        } else {
+            Optional<Team> result = teamRepository.findById(sms);
+
+            if (result.isEmpty()) {
+                throw new NotFoundException("No such data!");
+            } else {
+                team = result.get();
+            }
+        }
+
+        user.setFavouriteTeam(team);
+        repository.save(user);
+        return user;
+    }
+
+    public User removeFavoriteTeam(String email) {
+        validateEmail(email);
+        User user = getUserByEmail(email);
+        user.setFavouriteTeam(null);
+        repository.save(user);
+        return user;
+    }
+
     private static void validateEmail(String email) throws BadRequestException {
         if (email.isBlank()) {
             throw new BadRequestException("Email is a mandatory field!");
@@ -99,5 +134,4 @@ public class UserService {
         BCrypt.Result result = BCrypt.verifyer().verify(plainTextPassword.toCharArray(), hashedPassword);
         return result.verified;
     }
-
 }
