@@ -41,10 +41,14 @@
       p {
         font-size: 1rem;
         color: #56365C; // Lilac Shadow
-        margin-bottom: 20px;
       }
   
       .teams-dances {
+
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 30px;
+
         .team-dance {
           margin-bottom: 20px;
           padding: 10px;
@@ -52,13 +56,19 @@
           border-radius: 5px;
           border: 1px solid #D3CACD; // Dusty Lilac
   
+          img {
+            border-radius: 5px;
+          }
+
           h3 {
             font-size: 1.2rem;
             color: #4B0082; // Indigo
             margin-bottom: 5px;
+            padding-top: 1rem;
           }
   
           p {
+            padding-top: 0.5rem;
             font-size: 1rem;
             color: #56365C; // Lilac Shadow
           }

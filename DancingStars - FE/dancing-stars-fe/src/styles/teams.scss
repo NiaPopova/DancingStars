@@ -25,6 +25,21 @@
     padding: 15px;
     border-radius: 5px;
     border: 1px solid #D3CACD; // Dusty Lilac
+    text-align: center;
+
+    .team-img-container {
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+      :hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    img {
+      width: 60%;
+      border-radius: 5px;
+    }
 
     h3 {
       color: #4B0082; // Indigo
@@ -34,6 +49,7 @@
     p {
       color: #56365C; // Lilac Shadow
       margin-bottom: 5px;
+      padding-top: 1rem;
     }
 
     .favorite-button {
