@@ -26,7 +26,7 @@ const JuryPage = () => {
       <main className="jury-main">
         <div className="row">
           {juryMembers.map(member => (
-            <div className="col-md-3" key={member.name}>
+            <div className="col-6" key={member.name}>
               <div className={`card jury-card ${expandedJury === member.name ? 'expanded' : ''}`} onClick={() => toggleExpand(member.name)}>
                 {member.photo && (
                   <img src={require(`${member.photo}`)} className="card-img-top" alt={member.name} />
