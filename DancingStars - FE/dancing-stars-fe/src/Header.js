@@ -4,9 +4,19 @@ import { useAuth } from './auth';
 import './styles/header.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignInAlt, faSignOutAlt, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
 
 const Header = () => {
     const { isAuthenticated, user, logout } = useAuth();
+
+    const logOut = async () => {
+        try {
+            const response = await axios.post(`http://localhost:8080/user/logout`);
+            console.log(response.data);
+        } catch (error) {
+            console.error('Failed to logout. Please check your credentials.');
+        }
+    }
 
     return (
         <nav className="app-header">
@@ -40,6 +50,9 @@ const Header = () => {
                 </ul>
             </div>
             <div className="user-info">
+            <button onClick={logOut} className="btn-icon">
+                            <FontAwesomeIcon icon={faSignOutAlt} />
+                        </button>
                 <FontAwesomeIcon icon={faUserCircle} className="user-icon" />
                 {isAuthenticated ? (
                     <>
