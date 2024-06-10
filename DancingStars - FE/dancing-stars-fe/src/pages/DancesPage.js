@@ -23,7 +23,7 @@ const DancesPage = () => {
                     <div className="col-md-4" key={i}>
                         <div className="card mb-4">
                             {dance.photo && (
-                                <img src={require(`${dance.photo}`)} className="card-img-top" alt={dance.name} />
+                                <img src={require(`../assets/${dance.photo}`)} className="card-img-top" alt={dance.name} />
                             )}
                             <div className="card-body">
                                 <h5 className="card-title">{dance.name}</h5>

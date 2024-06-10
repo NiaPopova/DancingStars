@@ -64,7 +64,7 @@ const Performance = () => {
             {performances && performances.filter((p) => p.episodeDate === selectedPerformance.episodeDate).map((team, index) => (
               <div key={index} className="team-dance">
                 {team.photo && (
-                  <img src={require(`${team.photo}`)} className="card-img-top" alt={team.participantName} />
+                  <img src={require(`../assets/${team.photo}`)} className="card-img-top" alt={team.participantName} />
                 )}
                 <h3>{team.participantName} & {team.professionalName}</h3>
                 <p>Dance: {team.danceName}</p>

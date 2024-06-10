@@ -13,7 +13,7 @@ const EpisodeTemplate = ({ episode }) => {
                 {episode.winnerTeam && (
                     <div className="team-details">
                         {episode.winnerTeam.photo && (
-                            <img src={require(`${episode.winnerTeam.photo}`)} alt={`${episode.winnerTeam.participantName} and ${episode.winnerTeam.professionalName}`} />
+                            <img src={require(`../assets/${episode.winnerTeam.photo}`)} alt={`${episode.winnerTeam.participantName} and ${episode.winnerTeam.professionalName}`} />
                         )}
                         <p>Participant: {episode.winnerTeam.participantName}</p>
                         <p>Profession: {episode.winnerTeam.participantProfession}</p>
@@ -29,7 +29,7 @@ const EpisodeTemplate = ({ episode }) => {
                 {episode.losingTeam && (
                     <div className="team-details">
                         {episode.losingTeam.photo && (
-                            <img src={require(`${episode.losingTeam.photo}`)} alt={`${episode.losingTeam.participantName} and ${episode.losingTeam.professionalName}`} />
+                            <img src={require(`../assets/${episode.losingTeam.photo}`)} alt={`${episode.losingTeam.participantName} and ${episode.losingTeam.professionalName}`} />
                         )}
                         <p>Participant: {episode.losingTeam.participantName}</p>
                         <p>Profession: {episode.losingTeam.participantProfession}</p>

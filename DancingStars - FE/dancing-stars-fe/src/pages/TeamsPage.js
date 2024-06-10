@@ -96,7 +96,7 @@ const TeamsPage = () => {
           <div className="team-details">
             <h3>{selectedTeam.name}</h3>
             {selectedTeam.photo && (
-              <img src={require(`${selectedTeam.photo}`)} className="card-img-top" alt={selectedTeam.name} />
+              <img src={require(`../assets/${selectedTeam.photo}`)} className="card-img-top" alt={selectedTeam.name} />
             )}
             <p><strong>Participant:</strong> {selectedTeam.participantName}</p>
             <p><strong>Professional:</strong> {selectedTeam.professionalName}</p>
