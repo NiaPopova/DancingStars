@@ -10,7 +10,7 @@ const TeamsPage = () => {
   const { isAuthenticated, user } = useAuth();
   const [teams, setTeams] = useState([]);
   const [selectedTeam, setSelectedTeam] = useState(null);
-  const [favoriteTeams, setFavoriteTeams] = useState([]);
+  const [favoriteTeam, setFavoriteTeam] = useState(null);
 
   useEffect(() => {
     // Fetch teams data from your API
@@ -25,13 +25,13 @@ const TeamsPage = () => {
 
   useEffect(() => {
     if (isAuthenticated && user) {
-      // Fetch favorite teams data from your API
-      axios.get(`http://localhost:8080/user/favorite_teams?email=${user.email}`) // Replace with your actual API endpoint
+      // Fetch favorite team data from your API
+      axios.get(`http://localhost:8080/user/favorite_team?email=${user.email}`) // Replace with your actual API endpoint
         .then(response => {
-          setFavoriteTeams(response.data);
+          setFavoriteTeam(response.data);
         })
         .catch(error => {
-          console.error('There was an error fetching the favorite teams!', error);
+          console.error('There was an error fetching the favorite team!', error);
         });
     }
   }, [isAuthenticated, user]);
@@ -45,7 +45,7 @@ const TeamsPage = () => {
   const handleFavoriteClick = () => {
     if (!isAuthenticated || !selectedTeam) return;
 
-    if (favoriteTeams.includes(selectedTeam.sms)) {
+    if (favoriteTeam && favoriteTeam.sms === selectedTeam.sms) {
       // Remove from favorites
       axios.put(`http://localhost:8080/user/favorite_team/remove`, null, {
         params: {
@@ -54,7 +54,7 @@ const TeamsPage = () => {
         }
       })
         .then(() => {
-          setFavoriteTeams(favoriteTeams.filter(team => team !== selectedTeam.sms));
+          setFavoriteTeam(null);
         })
         .catch(error => {
           console.error('There was an error removing the team from favorites!', error);
@@ -68,7 +68,7 @@ const TeamsPage = () => {
         }
       })
         .then(() => {
-          setFavoriteTeams([...favoriteTeams, selectedTeam.sms]);
+          setFavoriteTeam(selectedTeam);
         })
         .catch(error => {
           console.error('There was an error adding the team to favorites!', error);
@@ -76,7 +76,7 @@ const TeamsPage = () => {
     }
   };
 
-  const isFavorite = selectedTeam && favoriteTeams.includes(selectedTeam.sms);
+  const isFavorite = selectedTeam && favoriteTeam && favoriteTeam.sms === selectedTeam.sms;
 
   return (
     <div className="container teams-container">

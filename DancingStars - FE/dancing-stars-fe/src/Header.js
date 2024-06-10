@@ -11,8 +11,8 @@ const Header = () => {
 
     const logOut = async () => {
         try {
-            const response = await axios.post(`http://localhost:8080/user/logout`);
-            console.log(response.data);
+            await axios.post(`http://localhost:8080/user/logout`);
+            logout();
         } catch (error) {
             console.error('Failed to logout. Please check your credentials.');
         }
@@ -50,9 +50,6 @@ const Header = () => {
                 </ul>
             </div>
             <div className="user-info">
-            <button onClick={logOut} className="btn-icon">
-                            <FontAwesomeIcon icon={faSignOutAlt} />
-                        </button>
                 <FontAwesomeIcon icon={faUserCircle} className="user-icon" />
                 {isAuthenticated ? (
                     <>
