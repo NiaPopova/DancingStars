@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './styles/episodes.scss';
-import EpisodeTemplate from './EpisodeTemplate';
+import '../styles/episodes.scss';
+import EpisodeTemplate from '../components/EpisodeTemplate';
 
 const EpisodesPage = () => {
   const [episodes, setEpisodes] = useState([]);

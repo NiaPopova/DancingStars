@@ -3,8 +3,8 @@ import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar as faSolidStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as faRegularStar } from '@fortawesome/free-regular-svg-icons';
-import { useAuth } from './auth'; // Ensure you have the useAuth hook
-import './styles/teams.scss';
+import { useAuth } from '../authentication/auth'; // Ensure you have the useAuth hook
+import '../styles/teams.scss';
 
 const TeamsPage = () => {
   const { isAuthenticated, user } = useAuth();

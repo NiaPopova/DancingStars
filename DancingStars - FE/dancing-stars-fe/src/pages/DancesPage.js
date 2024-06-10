@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './styles/dances.scss';
+import '../styles/dances.scss';
 
 const DancesPage = () => {
     const [dances, setDances] = useState([]);

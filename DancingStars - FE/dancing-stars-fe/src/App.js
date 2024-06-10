@@ -1,18 +1,18 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import LoginPage from './LoginPage';
-import RegistrationPage from './RegistrationPage';
-import DancesPage from './DancesPage';
-import HomePage from './HomePage';
-import JuryPage from './JuryPage';
-import TeamsPage from './TeamsPage';
-import EpisodesPage from './EpisodesPage';
-import Layout from './Layout';
-import Performance from './Performance';
-import AuthWrapper from './AuthWrapper';
-import PrivateRoute from './PrivateRoute';
-import PublicRoute from './PublicRoute';
-import NotFoundPage from './NotFoundPage';
+import LoginPage from './pages/LoginPage';
+import RegistrationPage from './pages/RegistrationPage';
+import DancesPage from './pages/DancesPage';
+import HomePage from './pages/HomePage';
+import JuryPage from './pages/JuryPage';
+import TeamsPage from './pages/TeamsPage';
+import EpisodesPage from './pages/EpisodesPage';
+import Layout from './layout/Layout';
+import Performance from './pages/Performance';
+import AuthWrapper from './authentication/AuthWrapper';
+import PrivateRoute from './authentication/PrivateRoute';
+import PublicRoute from './authentication/PublicRoute';
+import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { useAuth } from './auth';
-import './styles/header.scss';
+import { useAuth } from '../authentication/auth';
+import '../styles/header.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignInAlt, faSignOutAlt, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
@@ -54,7 +54,7 @@ const Header = () => {
                 {isAuthenticated ? (
                     <>
                         <span className="user-email">{user.email}</span>
-                        <button onClick={logout} className="btn-icon">
+                        <button onClick={logOut} className="btn-icon">
                             <FontAwesomeIcon icon={faSignOutAlt} />
                         </button>
                     </>

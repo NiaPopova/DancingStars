@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './styles/performance.scss';
-import { formatDate } from './utils/dateUtils';
+import '../styles/performance.scss';
+import { formatDate } from '../utils/dateUtils';
 
 const Performance = () => {
   const [performances, setPerfomances] = useState([]);

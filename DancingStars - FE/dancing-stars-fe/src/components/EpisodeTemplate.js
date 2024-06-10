@@ -1,6 +1,6 @@
 import React from 'react';
-import { formatDate } from './utils/dateUtils';
-import './styles/episodeTemplate.scss';
+import { formatDate } from '../utils/dateUtils';
+import '../styles/episodeTemplate.scss';
 
 const EpisodeTemplate = ({ episode }) => {
     return (
