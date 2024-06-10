@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar as faSolidStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar as faRegularStar } from '@fortawesome/free-regular-svg-icons';
+import { useAuth } from './auth'; // Ensure you have the useAuth hook
 import './styles/teams.scss';
 
 const TeamsPage = () => {
+  const { isAuthenticated, user } = useAuth();
   const [teams, setTeams] = useState([]);
   const [selectedTeam, setSelectedTeam] = useState(null);
+  const [favoriteTeams, setFavoriteTeams] = useState([]);
 
   useEffect(() => {
     // Fetch teams data from your API
@@ -17,16 +23,66 @@ const TeamsPage = () => {
       });
   }, []);
 
+  useEffect(() => {
+    if (isAuthenticated && user) {
+      // Fetch favorite teams data from your API
+      axios.get(`http://localhost:8080/user/favorite_teams?email=${user.email}`) // Replace with your actual API endpoint
+        .then(response => {
+          setFavoriteTeams(response.data);
+        })
+        .catch(error => {
+          console.error('There was an error fetching the favorite teams!', error);
+        });
+    }
+  }, [isAuthenticated, user]);
+
   const handleTeamChange = (event) => {
     const teamId = event.target.value;
     const team = teams.find(t => t.sms === teamId);
     setSelectedTeam(team);
   };
 
+  const handleFavoriteClick = () => {
+    if (!isAuthenticated || !selectedTeam) return;
+
+    if (favoriteTeams.includes(selectedTeam.sms)) {
+      // Remove from favorites
+      axios.put(`http://localhost:8080/user/favorite_team/remove`, null, {
+        params: {
+          email: user.email,
+          sms: selectedTeam.sms
+        }
+      })
+        .then(() => {
+          setFavoriteTeams(favoriteTeams.filter(team => team !== selectedTeam.sms));
+        })
+        .catch(error => {
+          console.error('There was an error removing the team from favorites!', error);
+        });
+    } else {
+      // Add to favorites
+      axios.put(`http://localhost:8080/user/favorite_team/add`, null, {
+        params: {
+          email: user.email,
+          sms: selectedTeam.sms
+        }
+      })
+        .then(() => {
+          setFavoriteTeams([...favoriteTeams, selectedTeam.sms]);
+        })
+        .catch(error => {
+          console.error('There was an error adding the team to favorites!', error);
+        });
+    }
+  };
+
+  const isFavorite = selectedTeam && favoriteTeams.includes(selectedTeam.sms);
+
   return (
     <div className="container teams-container">
       <main className="teams-main">
-        <div className="form-group">
+        <h2 className="teams-header">Select Your Favorite Team</h2>
+        <div className="form-group team-dropdown">
           <label htmlFor="teamSelect">Select a Team:</label>
           <select className="form-control" id="teamSelect" onChange={handleTeamChange}>
             <option value="0">Select a team</option>
@@ -46,6 +102,12 @@ const TeamsPage = () => {
             <p><strong>Professional:</strong> {selectedTeam.professionalName}</p>
             <p><strong>Participant Profession:</strong> {selectedTeam.participantProfession}</p>
             <p><strong>Final Position:</strong> {selectedTeam.finalPosition}</p>
+            {isAuthenticated && (
+              <button className="favorite-button" onClick={handleFavoriteClick}>
+                <FontAwesomeIcon icon={isFavorite ? faSolidStar : faRegularStar} />
+                {isFavorite ? 'Favorited' : 'Favorite'}
+              </button>
+            )}
           </div>
         )}
       </main>

@@ -35,5 +35,24 @@
       color: #56365C; // Lilac Shadow
       margin-bottom: 5px;
     }
+
+    .favorite-button {
+      background: none;
+      border: none;
+      color: #4B0082; // Indigo
+      cursor: pointer;
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+
+      &:hover {
+        color: #6B0082; // Darker Indigo
+      }
+
+      svg {
+        margin-right: 5px;
+      }
+    }
   }
 }

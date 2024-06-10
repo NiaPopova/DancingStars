@@ -35,7 +35,7 @@ const JuryPage = () => {
                   <h5 className="card-title">{member.name}</h5>
                   {expandedJury === member.name && (
                     <>
-                      <h6 className="card-subtitle mb-2 text-muted">{member.profession}</h6>
+                      <h6 className="card-subtitle mb-2 text-muted">{member.profession.charAt(0).toUpperCase() + member.profession.slice(1)}</h6>
                       <p className="card-text">{member.info}</p>
                     </>
                   )}
